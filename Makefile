@@ -17,3 +17,4 @@ login:
 #   docker login -u ${DOCKER_NAME} -p ${DOCKER_PASSWORD}
 push:	login tag-latest
 	docker push ${DOCKER_USERNAME}/${REPO_NAME}:latest
+
