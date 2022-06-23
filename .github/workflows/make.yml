@@ -19,6 +19,6 @@ jobs:
       
     - name: push
       run: make push
-      
+    
     - name: helm
       run: helm install helmchart ./charts/helmchart
