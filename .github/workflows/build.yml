@@ -19,8 +19,14 @@ jobs:
       
     - name: push
       run: make push
-      
+
+    - name: minikube start
+      run: make minikube
+          
     - name: helm
-      run: helm install helmchart ./charts/helmchart
-      
+      run: make helm
+  
+    - name: get service
+      run: make service
+    
 

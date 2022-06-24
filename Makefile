@@ -18,3 +18,12 @@ login:
 push:	login tag-latest
 	docker push ${DOCKER_USERNAME}/${REPO_NAME}:latest
 
+minikube:
+	minikube start
+
+helm: 
+	helm install helmchart ./charts/helmchart
+
+service:
+	kubectl get service
+
