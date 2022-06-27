@@ -5,13 +5,14 @@ build:	build-version
 .PHONY: build start push
 
 build-version:	
-	docker build -t ${{ DOCKER_USERNAME }}/${REPO_NAME}:${VERSION} .
+	docker build -t ${DOCKER_USERNAME}/${REPO_NAME}:${VERSION} .
 	 
 login:
-	docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+	#docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
+	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
 
 push:	login tag-latest
-	docker push ${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}:latest
+	docker push ${DOCKER_USERNAME}/${REPO_NAME}:latest
 
 minikube:
 	minikube start
