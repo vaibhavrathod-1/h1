@@ -27,9 +27,9 @@ jobs:
       run: make helm
     
     - name: Sleep for 300 seconds
-        uses: jakejarvis/wait-action@master
-        with:
-         time: '150s'
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '150s'
   
     - name: get service
       run: make service
