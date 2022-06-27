@@ -8,10 +8,10 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
+    
     - uses: actions/checkout@v3
     
     - name: build
@@ -29,4 +29,17 @@ jobs:
     - name: get service
       run: make service
     
+    - name: get svc
+      run: kubectl get svc
 
+    - name: get pod 
+      run: kubectl get po
+
+    - name: curl service list
+      run:  minikube service list
+
+    - name: get pod 
+      run: kubectl get po
+
+    - name: curl
+      run: curl $(minikube service helmchart --url)

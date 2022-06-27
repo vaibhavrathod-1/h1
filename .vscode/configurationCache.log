@@ -1,1 +1,1 @@
-{"buildTargets":["build","build-version","login","make","push","start","tag-latest"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
+{"buildTargets":[".PHONY","build","build-version","helm","login","minikube","push","service","start","tag-latest"],"launchTargets":[],"customConfigurationProvider":{"workspaceBrowse":{"browsePath":[],"compilerArgs":[]},"fileIndex":[]}}
