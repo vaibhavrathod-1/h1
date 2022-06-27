@@ -11,6 +11,7 @@ tag-latest:
 	docker tag ${DOCKER_USERNAME}/${REPO_NAME}:${VERSION} ${DOCKER_USERNAME}/${REPO_NAME}:latest
 	 
 login:
+#a
 	echo ${DOCKER_PASSWORD} | docker login -u ${DOCKER_USERNAME} --password-stdin
 
 push:	login tag-latest
