@@ -1,4 +1,4 @@
-include v.env
+include *.env
 export $(shell sed 's/=.*//' v.env)
 build:	build-version
 
