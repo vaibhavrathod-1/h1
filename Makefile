@@ -5,15 +5,10 @@ build:	build-version
 .PHONY: build start push
 
 build-version:	
-	docker build -t ${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}:${VERSION} .
-	
-tag-latest:
-	docker tag ${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}:${VERSION} ${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}:latest
- 
-start:
-	docker run -it --rm ${IMAGE}:${VERSION}/bin/bash
+	docker build -t ${{ DOCKER_USERNAME }}/${REPO_NAME}:${VERSION} .
+	 
 login:
-	echo ${{ secrets.DOCKER_PASSWORD }} | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+	docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}
 
 push:	login tag-latest
 	docker push ${{ secrets.DOCKER_USERNAME }}/${REPO_NAME}:latest
